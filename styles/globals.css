@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+    /* override default rules */
+    input[type="range"] {
+        -webkit-appearance: none;
+        min-width: 50px;
+        max-width: 150px;
+      }
+
+      /* style the track */
+      input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 6px;
+        cursor: pointer;
+        border: 1px solid #29334f;
+        overflow: hidden;
+        background: #464546;
+      }
+
+      /* make thumb transparent followed by bow shadows (10) */
+      input[type="range"]::-webkit-slider-thumb {
+        height: 100%;
+        width: 45px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        box-shadow: 0 0 0 #777777, -40px 0 0 #777777, -85px 0 0 #777777, -130px 0 0 #777777,
+           -175px 0 0 #777777, -220px 0 0 #777777, -265px 0 0 #777777, -310px 0 0 #777777,
+           -350px 0 0 #777777, -390px 0 0 #777777, -409px 0 0 #777777;
+        background: #777777;
+     }
+}
